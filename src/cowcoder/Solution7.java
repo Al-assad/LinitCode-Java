@@ -9,6 +9,17 @@ package cowcoder;
  */
 public class Solution7 {
     public int JumpFloor(int target) {
-        return 0;
+        if(target <= 2)
+            return target;
+        int f1 = 1;
+        int f2 = 2;
+        int t = 0;
+        for(int i = 3; i <= target; i++){
+            t = f1 + f2;
+            f1 = f2;
+            f2 = t;
+        }
+        return t;
     }
+
 }
