@@ -25,5 +25,27 @@ public class Solution1 {
     }
 
     //二分法查找
+    public boolean Find2(int target, int [][] array) {
+        if(array == null || array.length == 0 || (array.length ==1 && array[0].length == 0))
+            return false;
+        for(int i=0;i<array.length;i++){
+            if(target > array[i][array.length - 1])
+                continue;
+            if(target < array[i][0])
+                return false;
+            int low = 0;
+            int high = array[i].length - 1;
+            while(low <= high){
+                int mid = (low + high) / 2;
+                if(target > array[i][mid])
+                    low = mid + 1;
+                else if(target < array[i][mid])
+                    high = mid - 1;
+                else
+                    return true;
+            }
+        }
+        return false;
+    }
 
 }
