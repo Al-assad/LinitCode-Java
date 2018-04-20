@@ -1,4 +1,5 @@
 package cowcoder;
+import java.util.Objects;
 import java.util.Stack;
 /**
  * Author: Al-assad 余林颖
@@ -10,20 +11,33 @@ import java.util.Stack;
 
 public class Solution17 {
 
+    private Stack<Integer> stack = new Stack<>();
+    private Stack<Integer> minStack = new Stack<>();
 
     public void push(int node) {
-
+        stack.push(node);
+        if(minStack.empty())
+            minStack.push(node);
+        else if(minStack.peek() > node)
+            minStack.push(node);
     }
 
     public void pop() {
-
+        int num1 = stack.pop();
+        int num2 = minStack.pop();
+        if(num1 != num2)
+            minStack.push(num2);
     }
 
     public int top() {
-        return 0;
+        int num = stack.pop();
+        stack.push(num);
+        return num;
     }
 
     public int min() {
-        return 0;
+        int num = minStack.pop();
+        minStack.push(num);
+        return num;
     }
 }
