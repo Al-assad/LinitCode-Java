@@ -28,6 +28,7 @@ public class Solution24 {
                 count++;
         }
         return count;
+
     }
 
     private static boolean isPalindrome(String str) {
