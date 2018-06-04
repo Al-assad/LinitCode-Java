@@ -40,8 +40,8 @@ public class Solution24 {
             str1 = str.substring(0,str.length()/2 + 1);
             str2 = str.substring(str.length()/2,str.length());
         }else{
-            str1 = str.substring(0,str.length()/2);
             str2 = str.substring(str.length() /2,str.length());
+            str1 = str.substring(0,str.length()/2);
         }
         char[] chs = str2.toCharArray();
         char[] chsR = new char[chs.length];
@@ -54,6 +54,5 @@ public class Solution24 {
 
         return str1.equals(str2R);
     }
-
 
 }
